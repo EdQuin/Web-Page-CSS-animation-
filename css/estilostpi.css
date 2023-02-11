@@ -1,0 +1,361 @@
+html{
+    scroll-behavior:smooth;
+}
+
+body {
+    margin: 0;
+    font-family: "Lato", sans-serif, 'Roboto Mono', monospace;
+    font-size: 1rem;
+    background-color: #FFEFD5;
+}
+
+/*--- Barra de Nav----*/
+ul {
+    padding-left: 15px;
+}
+li, ul  {
+    list-style-type: none;
+}
+a {
+    padding-left: 0;
+}
+a:hover{
+    text-decoration: none;
+    color: rgba(255,255,255,.75);
+}
+li a{
+    color: rgba(255,255,255,.5);
+}
+.navbar-brand {
+    font-size: 18px;
+}
+
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    right: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+a {
+    color: black;
+}
+a:hover {
+    color: blue;
+}
+li a {
+    padding: 8px 8px 8px 0px;
+    text-decoration: none;
+    font-size: 1rem;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+li a:hover {
+    color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 1rem;
+    margin-left: 50px;
+}
+
+.openbtn {
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: #111;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+}
+
+.openbtn:hover {
+    background-color: #444;
+}
+
+@media screen and (max-height: 450px) {
+    .sidebar {padding-top: 15px;}
+    .sidebar a {font-size: 18px;}
+}
+@media (min-width: 768px) {
+    body {
+        margin-left: 16rem;
+    }
+
+    .sidenav {
+        width: 16rem;
+        height: 100%;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        overflow-x: hidden;
+        padding-top: 20px;
+
+    }
+}
+/*--- Barra de Nav----*/
+
+
+/*--------Animação Planeta--------*/
+
+span {
+    display: block;
+}
+.nero {
+    background-color: black;
+    padding: 2em 0em;
+}
+.orbit {
+    height: 20em;
+    width: 20em;
+    margin: 0em 5em auto;
+    position: relative;
+}
+
+.planet {
+    height: 20em;
+    width: 20em;
+    background-color: blue;
+    border-radius: 50%;
+    z-index: 4;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-image: linear-gradient(225deg, rgba(255, 255, 255, 0.5) 0%, rgba(100, 100, 255, 0.3) 50%, rgba(100, 100, 255, 0.7) 100%), linear-gradient(26deg, #1e5799 0%, #2989d8 22%, #236cba 44%, #2989d8 56%, #2a67e0 66%, #207cca 76%, #7db9e8 100%)
+}
+/*planet storm*/
+.planet:before {
+    content: "";
+    dipslay: block;
+    position: absolute;
+    height: 2em;
+    width: 3em;
+    background-color: red;
+    top: 78%;
+    right: 40%;
+    border-radius: 50%;
+    transform: skewX(40deg) rotate(20deg);
+    box-shadow: 3px 0px 10px 4px rgba(0,0,0,0.1), -3px 0px 10px 4px rgba(0,0,0,0.1);
+    background: radial-gradient(ellipse at center, rgba(122, 188, 255, .38) 17%, rgba(122, 188, 255, 0.5) 25%, rgba(96, 171, 248, 0.6) 44%, rgba(122, 188, 255, 0.48) 55%, rgba(122, 188, 255, 0.3) 62%, rgba(122, 188, 255, 0.34) 70%, rgba(64, 150, 238, 0.8) 100%);
+}
+
+.moon {
+    height: 2em;
+    width: 2em;
+    background: -moz-linear-gradient(213deg, rgba(255, 223, 117, 1) 0%, rgba(255, 223, 117, 1) 1%, rgba(171, 148, 31, 1) 100%);
+    /* ff3.6+ */
+    background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, rgba(171, 148, 31, 1)), color-stop(99%, rgba(255, 223, 117, 1)), color-stop(100%, rgba(255, 223, 117, 1)));
+    /* safari4+,chrome */
+    background: -webkit-linear-gradient(213deg, rgba(255, 223, 117, 1) 0%, rgba(255, 223, 117, 1) 1%, rgba(171, 148, 31, 1) 100%);
+    /* safari5.1+,chrome10+ */
+    background: -o-linear-gradient(213deg, rgba(255, 223, 117, 1) 0%, rgba(255, 223, 117, 1) 1%, rgba(171, 148, 31, 1) 100%);
+    /* opera 11.10+ */
+    background: -ms-linear-gradient(213deg, rgba(255, 223, 117, 1) 0%, rgba(255, 223, 117, 1) 1%, rgba(171, 148, 31, 1) 100%);
+    /* ie10+ */
+    background: linear-gradient(237deg, rgba(255, 223, 117, 1) 0%, rgba(255, 223, 117, 1) 1%, rgba(171, 148, 31, 1) 100%);
+    border-radius: 50%;
+    position: absolute;
+    top: 20%;
+    left: -20%;
+    animation: orbit 7s ease-in-out 0s infinite;
+}
+
+.moon-shadow {
+    display: block;
+    height: 3em;
+    width: 3em;
+    position: relative;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    margin-left: -4em;
+    margin-bottom: -2em;
+    animation: orbit 7s ease-in-out 0s infinite;
+}
+
+@keyframes orbit {
+    0% {
+        top: 20%;
+        left: -20%;
+        z-index: 5;
+    }
+    50% {
+        top: 80%;
+        left: 120%;
+
+    }
+    100% {
+        top: 20%;
+        left: -20%;
+        z-index: 2;
+    }
+}
+
+.moon2 {
+    height: 3em;
+    width: 3em;
+    border-radius: 50%;
+    border-radius: 50%;
+    position: absolute;
+    top: 20%;
+    left: -40%;
+    background: -moz-linear-gradient(213deg, rgba(255, 183, 74, 1) 0%, rgba(171, 74, 50, 1) 100%);
+    /* ff3.6+ */
+    background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, rgba(171, 74, 50, 1)), color-stop(100%, rgba(255, 183, 74, 1)));
+    /* safari4+,chrome */
+    background: -webkit-linear-gradient(213deg, rgba(255, 183, 74, 1) 0%, rgba(171, 74, 50, 1) 100%);
+    /* safari5.1+,chrome10+ */
+    background: -o-linear-gradient(213deg, rgba(255, 183, 74, 1) 0%, rgba(171, 74, 50, 1) 100%);
+    /* opera 11.10+ */
+    background: -ms-linear-gradient(213deg, rgba(255, 183, 74, 1) 0%, rgba(171, 74, 50, 1) 100%);
+    /* ie10+ */
+    background: linear-gradient(237deg, rgba(255, 183, 74, 1) 0%, rgba(171, 74, 50, 1) 100%);
+    animation: orbit2 11s ease-in-out 0s infinite;
+}
+
+.moon2-shadow {
+    display: block;
+    height: 5em;
+    width: 5em;
+    position: absolute;
+    top: 20%;
+    left: -40%;
+    margin-left: -93px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    animation: orbit2 11s ease-in-out 0s infinite;
+}
+
+@keyframes orbit2 {
+    0% {
+        top: 20%;
+        left: -40%;
+        z-index: 6;
+    }
+    50% {
+        top: 80%;
+        left: 140%;
+        z-index: 3;
+    }
+    100% {
+        top: 20%;
+        left: -40%;
+        z-index: 3;
+    }
+}
+
+@keyframes moon2shadow {
+    0% {
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        background-color: rgba(0, 0, 0, .1);
+        z-index: 5;
+    }
+    40% {
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        background-color: rgba(0, 0, 0, .1)
+    }
+    50% {
+        background-color: transparent;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0);
+        z-index: 3;
+    }
+    100% {
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0);
+        background-color: transparent;
+        z-index: 0;
+    }
+}
+article span {
+    font-size: 0.5rem;
+}
+/*--------Animação Planeta--------*/
+
+/*--------Secções de conteúdo--------*/
+article {
+    text-align: justify;
+    padding: 0 3rem;
+}
+.cssfont {
+    text-align: left;
+    background-color: #ced4da;
+    font-family: "Roboto Mono";
+    margin-bottom: 0px;
+    padding-bottom: 10px;
+}
+h3 {
+    margin-top: 4rem;
+    text-decoration: underline;
+    color: #191970;
+}
+h4 {
+    margin-top: 3rem;
+    color: #191970;
+}
+p {
+    padding: 1rem 0;
+}
+a.fa-code:hover, footer a:hover {
+    transform: scale(1.5);
+    color: black;
+    padding-left: 1rem;
+}
+
+/*--------Footer--------*/
+.footext {
+    text-decoration: none;
+    color: #444444;
+}
+footer{
+    border-top: solid 2px #444444;
+}
+footer a {
+    padding: 15px;
+}
+@media (max-width: 900px) {
+    footer li a {
+        font-size: 12px;
+        margin-left: 0;
+    }
+    .titulo {
+        margin-right: 100px;
+    }
+}
+/*--------Barra de Scroll--------*/
+
+/* width */
+::-webkit-scrollbar {
+    width: 20px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: dodgerblue;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: dodgerblue;
+}
+@media (min-width: 1000px){
+    .generators {
+        margin: 0px 200px;
+    }
+}

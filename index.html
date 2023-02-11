@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <link rel="icon" type="image/svg" href="imgs/icon%20colombia.png">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=MuseoModerno&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
+    <!-- meta tags -->
+    <meta charset="UTF-8">
+    <meta content="Edgar Quintero" name="author">
+    <meta content="Animation css language" name="keywords">
+    <meta content="Animation in css" name="description">
+
+
+    <!--Muito Importante para ajudar na adaptação a dispositivos móveis -->
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="fontawesome-free/css/all.css">
+
+    <!-- estilos próprios -->
+    <link href="css/estilostpi.css" rel="stylesheet">
+
+    <title>Animação em CSS: Um guia comprensível</title>
+
+</head>
+<header class="fixed-top d-md-none">
+
+    <!-- Barra navegação lateral -->
+    <div id="mySidebar" class="sidebar text-white">
+        <a href="javascript:void(0)" class="closebtn text-white fas fa-times-circle mt-4" onclick="closeNav()"></a>
+
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark d-md-inline-block">
+            <a class="navbar-brand" href="index.html">Animação em CSS:</a>
+            <a class="navbar-brand" href="index.html">Um guia compreensível</a>
+            <ul class="navbar-nav mr-auto">
+                <ul>
+                    <li class="nav-item d-block">
+                        <a class="nav-link active" href="#section1">Animação</a>
+                        <ul>
+                            <li class="nav-item">Javascript</li>
+                            <li class="nav-item">Css</li>
+                        </ul>
+                    </li>
+                    <li class="nav-item d-block">
+                        <a class="nav-link" href="#section2">CSS</a>
+                        <ul>
+                            <li class="nav-item">Transitions</li>
+                            <li class="nav-item">Keyframes</li>
+                            <li class="nav-item">Transforme</li>
+                        </ul>
+                    </li>
+                    <li class="nav-item d-block">
+                        <a class="nav-link" href="#section3">Transitions</a>
+                        <ul>
+                            <li class="nav-item">Transition - Property</li>
+                            <li class="nav-item">Transition - Duration</li>
+                            <li class="nav-item">Transition – timing-function</li>
+                            <li class="nav-item">Bezier Curves</li>
+                            <li class="nav-item">Transition-delay</li>
+                        </ul>
+                    </li>
+                    <li class="nav-item d-block">
+                        <a class="nav-link" href="#section4">Keyframes</a>
+                        <ul>
+                            <li class="nav-item">From</li>
+                            <li class="nav-item">To</li>
+                            <li class="nav-item">Percentage</li>
+                            <li class="nav-item"><a class="" href="#section5">Animation Property</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown d-block">
+                        <a class="nav-link" href="#section6">Transform</a>
+                        <ul>
+                            <li class="nav-item">Translate</li>
+                            <li class="nav-item">Scale</li>
+                            <li class="nav-item">Rotate</li>
+                            <li class="nav-item">Skew</li>
+                        </ul>
+                    </li>
+                    <li class="nav-item d-block">
+                        <a class="nav-link" href="#section8">CSS Generators</a>
+                    </li>
+                    <li class="nav-item d-block">
+                        <a class="nav-link" href="#section7">Frameworks</a>
+                    </li>
+                </ul>
+            </ul>
+        </nav>
+    </div>
+    <div class="d-md-none text-right px-3 pt-2">
+        <button class="openbtn" onclick="openNav()">☰ Menu</button>
+    </div>
+
+</header>
+<body class="" data-spy="scroll" data-target=".navbar" data-offset="70">
+
+
+<!-- Barra navegação -->
+<nav class="navbar navbar-expand-md navbar-dark bg-dark text-white fixed-top d-none d-md-block sidenav">
+    <a class="navbar-brand" href="index.html">Animação em CSS:</a>
+    <a class="navbar-brand" href="index.html">Um guia compreensível</a>
+    <div class="">
+        <ul class="navbar-nav mr-auto d-block">
+            <ul>
+                <li class="nav-item d-block">
+                    <a class="nav-link active" href="#section1">Animação</a>
+                    <ul>
+                        <li class="nav-item">Javascript</li>
+                        <li class="nav-item">Css</li>
+                    </ul>
+                </li>
+                <li class="nav-item d-block">
+                    <a class="nav-link" href="#section2">CSS</a>
+                    <ul>
+                        <li class="nav-item">Transitions</li>
+                        <li class="nav-item">Keyframes</li>
+                        <li class="nav-item">Transforme</li>
+                    </ul>
+                </li>
+                <li class="nav-item d-block">
+                    <a class="nav-link" href="#section3">Transitions</a>
+                    <ul>
+                        <li class="nav-item">Transition - Property</li>
+                        <li class="nav-item">Transition - Duration</li>
+                        <li class="nav-item">Transition – timing-function</li>
+                        <li class="nav-item">Bezier Curves</li>
+                        <li class="nav-item">Transition-delay</li>
+                    </ul>
+                </li>
+                <li class="nav-item d-block">
+                    <a class="nav-link" href="#section4">Keyframes</a>
+                    <ul>
+                        <li class="nav-item">From</li>
+                        <li class="nav-item">To</li>
+                        <li class="nav-item">Percentage</li>
+                        <li class="nav-item"><a href="#section5">Animation Property</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item d-block">
+                    <a class="nav-link" href="#section6">Transform</a>
+                    <ul>
+                        <li class="nav-item">Translate</li>
+                        <li class="nav-item">Scale</li>
+                        <li class="nav-item">Rotate</li>
+                        <li class="nav-item">Skew</li>
+                    </ul>
+                </li>
+                <li class="nav-item d-block">
+                    <a class="nav-link active" href="#section8">CSS Generators</a>
+                </li>
+                <li class="nav-item d-block">
+                    <a class="nav-link active" href="#section7">Frameworks</a>
+                </li>
+            </ul>
+        </ul>
+    </div>
+</nav>
+
+<main class="container-fluid p-0">
+
+    <!-- Título Página -->
+    <div class="mb-0">
+        <h1 class="font-weight-bold my-4 d-none d-lg-block pl-3">Animação em CSS - Um Guia Compreensível</h1>
+        <h3 class="font-weight-bold my-4 d-lg-none pl-3 titulo">Animação em CSS - Um Guia Compreensível</h3>
+    </div>
+    <article class="nero d-flex justify-content-center justify-content-md-left justify-content-lg-center">
+        <span class='orbit'>
+            <span class='planet'></span>
+            <span class='moon'></span>
+            <span class='moon-shadow'></span>
+            <span class='moon2'></span>
+            <span class='moon2-shadow'></span>
+        </span>
+    </article>
+
+<section class="row py-2 m-0" id="section1">
+    <article>
+
+        <h3>Animação</h3>
+        <p>Ao falar em desenvolvimento de conteúdo digital para web page pensamos sempre em todas as possibilidades criativas que temos disponíveis para tornar o nosso conteúdo interessante, as ferramentas que nos podem ajudar a cativar a atenção de quem estiver a visionar a nossa página.</p>
+        <p>Cativar e chamar a atenção de quem está a visualizar um website é por si só uma tarefa elemental na criação de conteúdo digital, isto pode ser obtido através de linguagens de código complexas na construção de uma página ou com o uso de outras mais simples e acessíveis a qualquer pessoa que esteja a começar no mundo de conteúdo direcionado para User Xperience.</p>
+        <p>Neste sentido existem duas soluções para dar vida à nossa página ou website</p>
+
+        <h4>JavaScript</h4>
+        <p>Ao criar animações com JavaScript poderemos animar elementos controlando ao pormenor uma variedade de aspetos desde o tempo e a velocidade da animação, fazer com que ela pare  ou inicie de novo tendo, portanto, um controlo mais avançado da animação a realizar em conformidade com a complexidade da sua estrutura.</p>
+        <div class="text-center"><img class="img-fluid" src="imgs/JavaScript-code.jpg"></div>
+
+        <h4>CSS</h4>
+        <p>Ao trabalhar as animações de uma página em CSS temos uma abordagem simples e efetiva na aplicação de animações a elementos de uma página, aqui a estrutura da animação é mais acessível e foca-se no comportamento que podemos atribuir a um elemento alterando o seu estado entre um ponto A (estático/inalterado) e um ponto B (após alteração/modificação).</p>
+        <p>Neste espaço iremos focar a nossa atenção em CSS, irão ser apresentadas uma serie explicações auxiliadas com exemplos para cada uma das propriedades que podemos aplicar a um elemento para dar vida a nossa página, utilizando unicamente a folha de estilos de CSS.</p>
+
+    </article>
+</section>
+
+<section class="row py-2 m-0" id="section2">
+    <article>
+        <h3>CSS (Cascading Style Sheets)</h3>
+        <div class="text-center mt-3"><img class="img-fluid" src="imgs/css%20code.png"></div>
+        <p>Com o intuito de personalizar o conteúdo que iremos por ao dispor dos visitantes da nossa página, temos portanto, a nossa folha de estilos CSS na qual iremos modificar os elementos contidos dentro do html, poderemos mudar a sua cor, tamanho, forma, construindo em formato de cascata, daí o seu nome, os diferentes atributos que iremos aplicar ao nosso documento e assim personalizar o nosso conteúdo para maximizar a experiência de quem visita a nossa página.</p>
+
+        <h4 class="pt-2">Princípios Fundamentais de CSS</h4>
+        <p>Para criar animações em CSS é preciso ter em conta três aspetos muito importantes que permitem uma vasta combinação de atributos a serem aplicados a um elemento e servem como base fundamental para o correto funcionamento de cada uma das animações que temos ao nosso dispor, estas propriedades são <strong class="font-weight-bold">Transition</strong>, <strong class="font-weight-bold">Keyframes</strong> e <strong class="font-weight-bold">Transform</strong> .</p>
+
+    </article>
+</section>
+
+<section class="row py-2 m-0" id="section3">
+    <article>
+
+        <h3>Transition</h3>
+        <div class="text-center"><img class="img-fluid" src="imgs/transition.gif"></div>
+        <p>Podemos automatizar de forma simples o comportamento que um elemento irá ter utilizando a propriedade Transition. Aqui são variadas as alterações que podemos atribuir entre um ponto A e um ponto B a um elemento, para isto devemos especificar as seguintes propriedades:</p>
+
+        <div class="pl-4">
+        <h4>Transition-Property </h4>
+        <p class="">Por medio de esta propriedade identificamos o aspeto a mudar no elemento, este pode variar desde a cor de fundo, as margins, paddings, borders, entre muitos outros.</p>
+        <p class="cssfont">transition: (background, color, border,...) </p>
+        <p class="">Existem listas muito completas para consultar todos os atributos que podemos modificar, como esta:
+            <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties">
+                <strong>Aqui</strong>
+            </a>
+        </p>
+
+        <h4>Transition - Duration </h4>
+        <p>Este aspeto é muito importante para o bom funcionamento da transição que pretendemos implementar, se não identificarmos um valor específico será atribuído “0” como o valor default, isto significa que ao termos zero como o tempo definido para a duração da transição, esta será automática, rude, na sua transição do seu estado A inalterado para B modificado.</p>
+        <p class="cssfont">transition-duration: 0.4s;</p>
+
+        <h4>Transition – timing - function</h4>
+        <p >Através de esta função  podemos atenuar, suavizar a velocidade em que a transição é feita, isto é, se uma transição tiver uma duração de 4s podemos definir a velocidade que o elemento irá ter ao longo de estes 4s com o uso dos seguintes atributos: ease , ease-in, ease-out, ease-in-out.</p>
+        <p class="cssfont">transition-timing-function: ease;</p>
+        <p class="cssfont">transition-timing-function: ease-in;</p>
+        <p class="cssfont">transition-timing-function: ease-out;</p>
+        <p class="cssfont">transition-timing-function: ease-in-out;</p>
+
+        <h4>Bezier Curves</h4>
+        <p>Para um controlo mais avançado e personalizado as nossas necessidades sobre a velocidade da transição que o elemento irá sofrer existe o atributo cubic-bezier(), para isto dispomos de quatro pontos da transição P0, P1, P2, P3 e P4, aqui podemos atribuir um valor entre 0,0 e 1,0 a cada um de estes pontos e assim representar a intensidade da velocidade do elemento ao longo de sua transição entre A inalterado e B modificado. </p>
+        <p class="cssfont">transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);</p>
+        <img class="img-fluid border" src="imgs/cubic_bezier.png">
+
+        <p>Existem muitos sites online que ajudam a calcular e simplificar este processo, onde permitem testar diferentes valores para posteriormente copiar e aplicar na nossa folha de estiles após obter a animação desejada. </p>
+        <p>A seguir temos dois exemplos muito populares que ajudam a simular este efeito, após testar diferentes configurações de velocidade e estarmos satisfeitos com o comportamento do elemento exemplo, é sócopiar os valores para a nossa folha de <strong>CSS</strong>.</p>
+            <a class="d-block text-center font-weight-bold text" href="http://www.css3beziercurve.net/">Css3beziercurve</a>
+        <a class="d-block text-center font-weight-bold text pb-3" href="https://cubic-bezier.com">Cubic-bezier</a>
+
+        <h4>Transition - delay</h4>
+        <p>Finalmente com esta atributo iremos especificar o tempo que levará a ter início a nossa transição após o evento que a desencadeia, que pode ser identificada em segundos (s) ou milissegundos (ms), isto é, se por exemplo quisermos mudar a cor de fundo de um elemento após a passagem do rato em hover, essa transição pode ser automática logo que o rato estiver sobre ele, ou pode levar algum tempo a acontecer  de facto. </p>
+        <p>Podemos utilizar todos os conceitos anteriores por separado para a realização de uma transição de um elemento ou também é possível simplificar todas estas funções numa mesma linha de código da seguinte forma:</p>
+        <p class="cssfont">transition: (property) (duration) (transition-timing-function) (transition-delay);</p>
+
+
+        <p class="codepen mt-4" data-height="213" data-theme-id="dark" data-default-tab="css,result" data-user="Eopnala" data-slug-hash="gOPgwoW" style="height: 213px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="exemplo1">
+            <span>See the Pen <a href="https://codepen.io/Eopnala/pen/gOPgwoW">exemplo1</a> by Edgar  Quintero (<a href="https://codepen.io/Eopnala">@Eopnala</a>)on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+        <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+        </div>
+    </article>
+</section>
+
+<section class="row m-0" id="section4">
+    <article>
+        <h3>Keyframes</h3>
+        <p>Para aplicar uma determinada animação a um elemento esta precisa de ter definido um ponto de início e um outro no qual ela termina, o primeiro representa o seu estado normal, natural, por sua vez o ponto de termino é quando finaliza o processo de mutação do elemento e este se encontra num estado diferente do original.</p>
+        <p>De igual forma mediante o uso dos Key Frames <span class="badge badge-pill badge-danger">( @keyframes )</span> podemos nomear o aspeto que o elemento terá num ponto específico da animação por meio de um valor em percentagem da evolução da mesma, os valores atribuídos podem ir do 0% onde teremos o elemento no ponto A estático e 100% onde teremos o nosso elemento no ponto B onde já estará finalizada a animação.</p>
+        <div class="pl-4">
+        <h4>From</h4>
+        <p>Através da função <strong>from</strong> identificamos qual será o ponto de partida para a animação, o que em termos de percentagem pode ser identificado como o ponto 0% da animação a ser realizada.</p>
+
+        <h4>To</h4>
+        <p>Aqui é especificado o estado final do elemento após o finalizar da animação que foi iniciada anteriormente, falando em percentagem este é considerado o ponto 100% da animação realizada.</p>
+        <p class="cssfont">@keyframes nome{</p>
+        <p class="cssfont pl-5">from {}</p>
+        <p class="cssfont pl-5">to{}</p>
+        <p class="cssfont">}</p>
+
+        <h4>Percentagem</h4>
+        <p>Também podemos utilizar vários pontos de evolução para o nosso elemento através de valores percentagem, como vimos no exemplo anterior, recomenda-se seguirem um padrão para permitir uma fluidez adequada a animação.</p>
+        <p class="font-weight-bold text-center">Example:  0%  —  25%  —  50%  —  75%  —  100%</p>
+        <p class="cssfont">@keyframes vaievem{</p>
+        <p class="cssfont pl-5">0% { transform: translateX(50px) }</p>
+        <p class="cssfont pl-5">50% { transform: translateX(100px) }</p>
+        <p class="cssfont pl-5">100% { transform: translateX(50px) }</p>
+        <p class="cssfont">}</p>
+
+        <p>A composição da propriedade <span class="badge badge-pill badge-danger">( @keyframes )</span> é muito importante para o seu correto funcionamento, ela deve ter um nome que iremos identificar na página de estilos CSS dentro da caixa a qual pretendemos aplicar a animação, isto tem como propósito ser o comando de chamada para atribuir ao  nosso elemento a animação que iremos definir através dos keyframes, a seguir dentro dele devemos identificar o ponto from  e o ponto to, ou então indicar com percentagem os diferentes tempos em que será realizada a animação.</p>
+        <p>Um forma simples de aplicar os atributos da propriedade animation é a través da mudança de posição e rotação, como no exemplo a seguir:</p>
+
+        <p class="codepen" data-height="515" data-theme-id="dark" data-default-tab="css,result" data-user="tcaer" data-slug-hash="WxEJxd" style="height: 515px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="CSS Keyframes example">
+            <span>See the Pen
+                <a href="https://codepen.io/tcaer/pen/WxEJxd">CSS Keyframes example</a>by tino Caer (<a href="https://codepen.io/tcaer">@tcaer</a>)on
+                <a href="https://codepen.io">CodePen</a>.
+            </span>
+        </p>
+        <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+        </div>
+    </article>
+
+</section>
+
+<section class="row m-0" id="section5">
+    <article>
+    <h3>Animation Property</h3>
+    <p>Como anteriormente dito, para obtermos este efeito em que o elemento passa do ponto A (cor verde)  para o ponto B (cor vermelha) devemos introduzir os seguintes atributos dentro da caixa do elemento a ser animado, para identificar o comportamento que este irá a ter ao longo da animação </p>
+
+        <div class="pl-4">
+    <h4>Animation – name</h4>
+    <p>Aqui identificamos o nome que será atribuído após o @keyframes e será a ponte que permita o elemento buscar a animação que irá ser realizada nele.</p>
+    <p class="cssfont">animation-name: move;</p>
+
+    <h4>Animation – duration</h4>
+    <p>Neste atributo identificamos a duração, o tempo total que levará  o nosso elemento a passar desde o seu ponto A inalterado até o B após a animação estar concluída.</p>
+    <p class="cssfont">animation-duration: 3s;</p>
+
+    <h4>Animation – timing - function</h4>
+    <p>Aqui indicamos a velocidade de aceleração com o atributo ease por exemplo a animação terá um início lento, ao meio acelera e abranda de novo no fim, também podemos estabelecer valores como os da “Brezer´s Curve para suavizar a transição entre o ponto A e o ponto B. </p>
+            <p>Os atributos que podemos aplicar são os seguintes:</p>
+            <p class="cssfont">animation-timing-function: ease;</p>
+            <p class="cssfont">animation-timing-function: ease-in; (Início lento, normal no fim)</p>
+            <p class="cssfont">animation-timing-function: ease-out; (Início normal, lento no fim)</p>
+            <p class="cssfont">animation-timing-function: ease-in-out; (Início e fim lentos)</p>
+            <p class="cssfont">animation-timing-function: linear; (Velocidade constante)</p>
+            <p class="cssfont">animation-timing-function: initial; (Valor default inicial)</p>
+            <p class="cssfont">animation-timing-function: inherit; (Herda a velocidade de um elemento acima dele)</p>
+            <div class="text-center mt-4"><img class="img-fluid" src="imgs/animation-timing.gif"></div>
+
+    <h4>Animation – delay </h4>
+    <p>Determinamos com esta propriedade um compasso de espera entre o momento que a animação é ativada e o momento real da animação a ser aplicada.</p>
+    <p class="cssfont">animation-delay: 1s; </p>
+            <div class="text-center mt-4"><img class="img-fluid" src="imgs/animation-delay.gif"></div>
+
+    <h4>Animation – iteration – acount</h4>
+    <p>Isto permite-nos estabelecer quantas vezes será reproduzida a animação, ou também podemos tornar a animação constante na sua repetição, para isto basta aplicar <strong>Infinite</strong>.</p>
+
+            <p class="cssfont">animation-iteration-acount: infinite; (Repete sem interrupção)</p>
+            <p class="cssfont">animation-iteration-acount: initial; (Define como default o valor inical indicado)</p>
+            <p class="cssfont">animation-iteration-acount: inherite;(Herda o valor a repetir de um elemento acima dele)</p>
+            <div class="text-center mt-4"><img class="img-fluid" src="imgs/animation-iteration.gif"></div>
+
+    <h4>Animation – direction</h4>
+    <p>Com esta propriedade iremos indicar qual será ordem em que se realiza a animação, realizar um ciclo e retroceder para o seu estado original por exemplo, ou ao finalizar voltar ao início e começar novamente.</p>
+    <p class="cssfont">animation-direction: normal; (Default, de início até ao fim)</p>
+            <p class="cssfont">animation-direction: alternate; (alterna entre normal e reverse)</p>
+            <p class="cssfont">animation-direction: reverse; (animação ininicia no fim e termina no início)</p>
+            <p class="cssfont">animation-direction: alternate-reverse; (aterna entre normal, reverse e alternate)</p>
+            <div class="text-center mt-4"><img class="img-fluid" src="imgs/animation-direction.gif"></div>
+
+    <h4>Animation – fill – mode</h4>
+    <p>Ao utilizar esta propriedade se identifica quais os valores que irão ser aplicados no elemento antes e depois da animação se desenvolver.</p>
+    <p class="cssfont">animation-fill-mode: backwards; (antes de iniciar são aplicados os valores do ponto 0%)</p>
+            <p class="cssfont">animation-fill-mode: forwards; (O elemento mantem os alterações sofridas no ponto 100%)</p>
+            <p class="cssfont">animation-fill-mode: both; (Alterna entre both e fordwards)</p>
+            <p class="cssfont">animation-fill-mode: normal; (O elemento regrssa ao seu estado normal no fim)</p>
+            <div class="text-center mt-4"><img class="img-fluid" src="imgs/animation-fill.gif"></div>
+
+    <h4>Animation – play-state</h4>
+    <p>Este atributo é muito útil porque permite pausar e continuar com uma animação que esteja a ser desenvolvida em estado <strong>Infinite</strong> por exemplo.</p>
+    <p class="cssfont">animation-play-state: playing;</p>
+            <p class="cssfont">animation-play-state: paused;</p>
+            <div class="text-center mt-4"><img class="img-fluid" src="imgs/animation-play.gif"></div>
+
+            <p>Ou então também é possível utilizarmos a versão abreviada de estes atributos onde podemos compilar toda esta informação numa única linha de código, por exemplo como observamos anteriormente na classe <strong>vaivem</strong> do quadro que mudava de cor, e acrescentar ainda outros atributos como o <strong>delay</strong> ou <strong>timing-function</strong>:</p>
+    <p>animation: (animation-name) (animation-duration) (animation-fill-mode) (animation-timing-function) (animation-iteration-count) (animation-direction) (animation-delay);</p>
+    <p class="cssfont"> animation: vaievem easy-in-out 4s infinite alternate 1s;</p>
+
+        <p>É importante ressaltar aqui que a ordem em que são aplicadas as propriedades não tem de ser obrigatoriamente esta, com a exceção da função animation-duration que deverá estar sempre indicada antes da animation-delay, isto porque o primeiro valor apresentado será reconhecido como a duração da animação e o segundo como o tempo levará a animação a ser iniciada.</p>
+            <p>Finalmente ao utilizar estes atributos também é possível várias animações dentro da mesma caixa de elemento, isto é, se tivermos como no caso anterior duas animações, uma que muda a cor de fundo indicada no <span class="badge badge-pill badge-danger">( @keyframes )</span> de nome <strong>exemplo</strong> e outra em que a caixa avança e volta atrás no <span class="badge badge-pill badge-danger">( @keyframes )</span> de nome <strong>vaievem</strong>, estas podem estar juntas, porém devemos ter em atenção coincidir os atributos com a posição em que o nome foi indicado, por exemplo:</p>
+
+        <p class="cssfont">.caixa{</p>
+        <p class="cssfont pl-5">animation-name: example, vaievem;</p>
+        <p class="cssfont pl-5">animation-duration: 4s, 3s;</p>
+        <p class="cssfont pl-5">animation-fill-mode: forwards;</p>
+        <p class="cssfont pl-5">animation-delay: 1s;</p>
+        <p class="cssfont pl-5">animation-iteration-count: infinite;</p>
+        <p class="cssfont pl-5">animation-timing-function: ease;</p>
+        <p class="cssfont pl-5">animation-direction: alternate;</p>
+        <p class="cssfont">}</p>
+
+        <p>No caso de existir dois ou mais animações e não for identificado nenhuma função específica para a segunda ou terceira animação nos aspetos seguintes de duração, repetição e assim, o programa volta atrás e será tomado como valida a indicação que tiver sido dada em primeiro lugar, depois a segunda e sucessivamente. </p>
+        </div>
+    </article>
+
+</section>
+
+<section class="row m-0" id="section6">
+    <article>
+
+        <h3>Transform</h3>
+        <p>Através da propriedade transform dispomos de uma grande variedade de atributos para modificar o estado e a posição em que  um elemento será apresentado na página, seja em 2D ou em 3D, podemos determinar um  comportamento específico para o nosso elemento após ser ativado por uma ação do utilizador, entre outros atributos.</p>
+
+        <div class="pl-4">
+        <h4>Translate</h4>
+            <div class="text-center"><img class="img-fluid" src="imgs/transform.gif"></div>
+        <p>Com ajuda de este propriedade iremos movimentar o nosso elemento num plano 2D desde um ponto A até um ponto B. Para isto devemos ter em conta que o plano será divido em dois eixos, sendo Y na vertical de acima par abaixo e vice-versa e sendo X na horizontal de esquerda para a direita e vice-versa.</p>
+            <p>Para movimentar o lemento no eixo X (x-axis)</p>
+        <p class="cssfont">transform: translateX(200px); or transform: translateX(-200px)</p>
+            <p>Para movimentar o lemento no eixo Y (y-axis)</p>
+        <p class="cssfont">transform: translateX(200px); or transform: translateX(-200px)</p>
+            <p>É possível utilizar também a versão abreviada, sempre que se tenha atenção em introducir nesse caso os dois valores pretendidos, ao indicar um único valor este será reconhecido como sendo ao longo do eixo X</p>
+        <p class="cssfont">transform: translate(x-axis, y-axis)Example: transform: translate(200px, 200px);</p>
+
+        <p class="codepen" data-height="234" data-theme-id="dark" data-default-tab="css,result" data-user="Eopnala" data-slug-hash="rNxyroG" style="height: 234px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Translation">
+            <span>See the Pen
+                <a href="https://codepen.io/Eopnala/pen/rNxyroG">Translation</a> by Edgar  Quintero (<a href="https://codepen.io/Eopnala">@Eopnala</a>)on
+                <a href="https://codepen.io">CodePen</a>.
+            </span>
+        </p>
+        <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+
+        <h4>Scale</h4>
+
+        <div class="text-center"><img class="img-fluid" src="imgs/scale.gif"></div>
+
+            <p>Utilizando a propriedade scale iremos modificar o tamanho do elemento entre seu ponto de origem e o final, de novo utilizaremos para isto os eixos X e Y onde deveremos específicar um valor para o nosso elemento, sendo que qualquer valor acima de uma decima (1.0) irá incrementar o elemento e abaixo de este (0.5) irá diminuir o seu tamanho.</p>
+            <p>Podemos modificar a escala do elemento na horizontal pelo eixo X</p>
+            <p class="cssfont">transform: scaleX(3);</p>
+            <p>Igualmente podemos alterar a escala do elemento no eixo vertical Y:</p>
+            <p class="cssfont">transform: scaleY(0.5)</p>
+            <p>Os dois eixos podem ser combinados na mesma propriedade:</p>
+            <p class="cssfont">transform: scale(3 , 0.5); ou transform: scale(0.5);</p>
+
+            <p class="codepen" data-height="346" data-theme-id="dark" data-default-tab="css,result" data-user="Eopnala" data-slug-hash="JjGWapV" style="height: 346px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Scale">
+                <span>See the Pen
+                    <a href="https://codepen.io/Eopnala/pen/JjGWapV">Scale</a> by Edgar  Quintero (<a href="https://codepen.io/Eopnala">@Eopnala</a>)on
+                    <a href="https://codepen.io">CodePen</a>.
+                </span>
+            </p>
+            <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+            <h4>Rotate</h4>
+            <div class="text-center"><img class="img-fluid" src="imgs/rotation.gif"></div>
+            <p>Com o uso de esta propriedade iremos aplicar um efeito de rotação ao nosso elemento. Para isto devemos implementar valores em graus através de três eixos X, Y, e Z. Esta animação pode ser orientada no sentido dos ponteiros do relógio se aplicarmos graus positivos, por sua vez se irá movimentar no sentido contrário se indicarmos  valores negativos.</p>
+        <p>Podemos encontrar uma grande variedade de exemplos disponíveis para melhor compreender estas animações, a seguir por exemplo uma animação criada por um utilizador da página Codepen, aqui os nossos elementos estão a fazer uma rotação de 360 graus a cada 3 segundos.</p>
+
+            <p class="codepen" data-height="318" data-theme-id="dark" data-default-tab="css,result" data-user="Eopnala" data-slug-hash="MWKpqBX" style="height: 318px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Rotate">
+                <span>See the Pen <a href="https://codepen.io/Eopnala/pen/MWKpqBX">Rotate</a> by Edgar  Quintero (<a href="https://codepen.io/Eopnala">@Eopnala</a>)on
+                    <a href="https://codepen.io">CodePen</a>.
+                </span>
+            </p>
+            <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+        <h4>Rotação no eixo X</h4>
+            <p>Sendo a rotação apresentada na horizontal esta não será muito percetível numa fase inicial, ao aumentar os graus poderemos ver sim uma alteração na altura do elemento.</p>
+            <p class="cssfont">transform: rotateX ( 45 deg );</p>
+            <p>Podemos ver como se irá comportar o nosso elemento em conformidade com os graus que formos aplicando ao dar <a href="https://www.w3schools.com/cssref/playit.asp?filename=playcss_transform_rotatex">Click Aqui!</a></p>
+
+            <h4>Rotação no eixo Y</h4>
+            <p>De novo pouco visível visto rodar na verticalidade do elemento, aqui será a largura de este que iremos ver ser alterada gradualmente com o aumentar ou diminuir dos graus introduzidos.</p>
+            <p class="cssfont">transform: rotateY ( 45deg );</p>
+            <p>Podemos ver como se irá comportar o nosso elemento em conformidade com os graus que formos aplicando ao dar <a href="https://www.w3schools.com/cssref/playit.asp?filename=playcss_transform_rotatey">Click Aqui!</a>!</p>
+
+            <h4>Rotação no eixo Z</h4>
+            <p>Será com os graus indicados neste atributo que teremos uma clara perceção da rotação do nosso elemento, aqui será simples de perceber ao olhar a rotação que o nosso elemento irá ter, tendo o centro da caixa como eixo onde faz a sua rotação.</p>
+            <p class="cssfont">transform: rotateZ ( 45deg );</p>
+            <p>Podemos ver como se irá comportar o nosso elemento em conformidade com os graus que formos aplicando ao dar <a href="https://www.w3schools.com/cssref/playit.asp?filename=playcss_transform_rotatez">Click Aqui!</a></p>
+
+            <p>Utilizando valores positivos ao aplicar a propriedade rotate teremos um movimento de esquerda para a direita, como anteriormente dito ao utilizar valores negativos teremos um movimento rotativo no sentido oposto. </p>
+            <p class="cssfont">transform: rotateZ(45deg) – Rotação no sentido dos relogios</p>
+            <p class="cssfont">transform: rotateZ(-45deg) – Rotação no sentido contrário</p>
+        <p>De novo mais um exemplo cedido por um utilizador do Codepen, aqui temos três elementos e podemos observar o comportamento de cada um ao fazer uma breve rotação em cada eixo disponível, X, Y, e Z</p>
+
+
+            <p class="codepen" data-height="490" data-theme-id="dark" data-default-tab="css,result" data-user="Eopnala" data-slug-hash="YzwZjMg" style="height: 490px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Eixos X Y Z">
+                <span>See the Pen <a href="https://codepen.io/Eopnala/pen/YzwZjMg">Eixos X Y Z</a> by Edgar  Quintero (<a href="https://codepen.io/Eopnala">@Eopnala</a>)on
+                    <a href="https://codepen.io">CodePen</a>.
+                </span>
+            </p>
+            <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+
+            <h4>Skew</h4>
+        <div class="text-center"><img class="img-fluid" src="imgs/skew.gif"></div>
+            <p>Skew é uma propriedade com a qual  podemos modificar elementos em 2D que ao afastar ângulos do seu centro permite comprimir o seu volume, isto é, ao indicar um valor em graus para os eixos X e Y teremos um efeito de inclinação para o nosso elemento na vertical e horizontal. </p>
+
+            <h4>Skew X ()</h4>
+            <p>Com este atributo específico iremos inclinar o nosso elemento na horizontal, seja para a esquerda ao indicar valores positivos para X ou para a direita se forem negativos.</p>
+            <p class="cssfont">transform: skewX (20deg) ou simplificado skew (20deg);</p>
+
+        <p class="codepen" data-height="297" data-theme-id="dark" data-default-tab="css,result" data-user="Eopnala" data-slug-hash="PoZpewq" style="height: 297px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Skew X">
+            <span>See the Pen <a href="https://codepen.io/Eopnala/pen/PoZpewq">Skew X</a> by Edgar  Quintero (<a href="https://codepen.io/Eopnala">@Eopnala</a>)on
+                <a href="https://codepen.io">CodePen</a>.
+            </span>
+        </p>
+        <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+
+        <h4>Skew Y ()</h4>
+        <p>Este atributo possibilita, al igual que o anterior, inclinar o elemento numa direção específica, se for um valor positivo em graus para Y o elemento irá ser inclinado para cima e se for negativo irá para abaixo. Ao combinar estes dois valores de  eixos teremos o efeito apropriado e desejado de ver o elemento ser comprimido numa direção simulando estar a ser deitado ou inclinado.  </p>
+        <p class="cssfont">Para o eixo Y será: transform: skewY (80deg);</p>
+
+        <p class="codepen" data-height="265" data-theme-id="dark" data-default-tab="css,result" data-user="Eopnala" data-slug-hash="WNrpKgr" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Skew Y">
+            <span>See the Pen <a href="https://codepen.io/Eopnala/pen/WNrpKgr">Skew Y</a> by Edgar  Quintero (<a href="https://codepen.io/Eopnala">@Eopnala</a>)on
+                <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+        <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+
+        <p>Com o intuito de simplificar a tarefa de quem estiver a criar em css, é possível conjugar estes atributos numa única linha de código, por exemplo:</p>
+        <p class="cssfont">transform: translateX (200px) rotateX (45deg) scaleY (1.5) skewX (45deg);</p>
+
+        <p>Podemos igualmente juntar estes dois atributos a ser aplicados a um único elemento e ter assim uma animação mais fluida, como por exemplo:</p>
+        <p class="cssfont">@keyframes skew {</p>
+        <p class="cssfont pl-5">0% { transform: skew(20deg, 20deg); }</p>
+        <p class="cssfont pl-5">100% { transform: skew(-20deg, -20deg); }</p>
+        <p class="cssfont"> }</p>
+
+        <p class="codepen" data-height="265" data-theme-id="dark" data-default-tab="css,result" data-user="css-tricks" data-slug-hash="povNBmQ" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="skew() shorthand property">
+            <span>See the Pen <a href="https://codepen.io/team/css-tricks/pen/povNBmQ">skew() shorthand property</a> by CSS-Tricks (<a href="https://codepen.io/css-tricks">@css-tricks</a>)on
+                <a href="https://codepen.io">CodePen</a>.
+            </span>
+        </p>
+        <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+        </div>
+    </article>
+</section>
+
+    <section class="rowno-gutters" id="section8">
+    <article>
+        <h3>CSS Generators</h3>
+        <p>Para ajudar e facilitar a vida dos criadores de conteúdo com este tipo de tarefas que podem levar muito tempo a serem desenvolvidas, existem um grande número de geradores de código muito intuitivos e simples de utilizar, basta simular o comportamento que pretendemos no elemento, copiar e colar na nossa folha de estilos.</p>
+        <p>A seguir temos uma breve lista das páginas mais conhecidas e utilizadas onde podemos encontrar exemplos de código ou testar e construir o nosso proprio.</p>
+
+        <div class="pl-4">
+            <h4>Web Code Tools</h4>
+            <div class="generators"><img class="img-fluid" src="imgs/WebCodeTools.png"></div>
+            <p>A página da <strong>Web Code Tools</strong> representa um espaço muito completo ao nível de conteúdo para o desenvolvimento de páginas web, nela é possível explorar muitos exemplos de animação realizados tanto em CSS como JavaScript. Na sua Home-Page encontramos uma barra lateral que contem varias livraria ao nosso dispor, desde CSS, html, JavaScript, entre outros, após fazer a nossa escolha teremos ao nosso dispor variados exemplos de animações para aplicar, estrutura html para construir a nossa página e muito mais. </p>
+            <a class="fas fa-code fa-2x" href="https://webcode.tools/css-generator">Web Code Tools</a>
+
+            <h4>CSS3 Generator</h4>
+            <div class="generators"><img class="img-fluid" src="imgs/css3generator.png"></div>
+            <p>Esta página apresenta um generador, como está explicito no seu nome, que nos permite visualizar animações aplicadas a diferentes elementos, isto permite visualizar o comportamento que um elemento irá ter ao ser submetido a  um determinado atributo, depois é copiar e colar o código para a nossa página de estilos.</p>
+            <li><a class="fas fa-code fa-2x" href="https://css3generator.com/">CSS3 Generator</a></li>
+
+            <h4>Animista</h4>
+                <div class="generators"><img class="img-fluid" src="imgs/animista.png"></div>
+            <p>Esta página fornece uma livraria na horizontal na parte superior do web site onde podemos escolher variadas animações a serem aplicadas a um elemento, do lado esquerdo tem um elemento no quala através de inputs podemos alterar os diferentes atributos com que é manipulado o elemento e ver em tempo real como se comporta o elemento que pretendemos animar.</p>
+            <li><a class="fas fa-code fa-2x" href="https://animista.net/">Animista</a></li>
+
+            <h4>CSS Animate</h4>
+                    <div class="generators"><img class="img-fluid" src="imgs/cssanimate.png"></div>
+            <p>Esta página é muito simples na sua apresentação mas muito complexa na sua construção, com ela podemos modificar o aspecto de um elemento que se encontra  no lado esquerdo, isto é feito atráves das propriedades disponíveis a nossa direita, onde também temos a possibilidade de personalizar os atributos a serem aplicados. Muito interessante e vale a pena ressaltar é a sua barra de tempo que nos permite escolher @keyframes específicos que podemos manipular e assim podemos testar quais os pontos mais adequados para animar que permitam obter o resultado desejado.</p>
+            <li><a class="fas fa-code fa-2x" href="https://cssanimate.com/">CSS Animate</a></li>
+
+            <h4>Angry Tools</h4>
+                        <div class="generators"><img class="img-fluid" src="imgs/angrytools.png"></div>
+            <p>Igual que a página do exemplo anterior, o que mais chama a nossa atenção aqui é termos ao nosso dispor uma barra horizontal que representa os @keyframes da nossa animação, isto permite seleccionar o ponto exacto onde queremos que uma transformação do nosso elemento seja feita.  Também existem uma grande variedade de exemplo ao dispor do visitante para experimentar no elemento que se encontra ao centro e fundo do nosso ecrã. A seguir a isto temos uma caixa com o código para copiar e colar o resultado desejado, tanto na página de html com na nossa página de estilos.</p>
+            <li><a class="fas fa-code fa-2x" href="https://angrytools.com/css/animation/">Angry Tools</a></li>
+
+            <h4>Code Pen</h4>
+            <div class="generators"><img class="img-fluid" src="imgs/codepen.png"></div>
+            <p>Esta página é uma das mais interesantes para visitar, nela temos ao nosso dispor exemplos de códiggo simples como o que abordamos aqui em CSS, até os mais complexos de JavaScript entre outros. Das suas características mais relevantes está a possibilidade de vermos código criado por outros utilizadores e diponível para ser visto e estudado por outros interessados na matéria, tem conteúdo muito versatil, onde podemos encontrar trabalhos desde os mais básicos possíveis como a mudança de cor num elemento, até a criação de perfeitas obras de arte, isto tudo num espaço feito pelos utilizadores, para os utilizadores.</p>
+            <li><a class="fas fa-code fa-2x" href="http://codepen.io/">Code Pen</a></li>
+
+        </div>
+    </article>
+</section>
+
+    <section class="row mb-5 no-gutters" id="section7">
+        <article class="pb-5">
+            <h3>Frameworks</h3>
+            <p>Todas as propriedades que foram aqui mencionadas representam uma abordagem personalizada dos estilos que podemos criar para os nossos elementos, introduzindo atributos numa folha de estilos <strong>CSS</strong>, criando classes próprias para modificar o conteúdo do nosso documento <strong>HTML</strong>.</p>
+            <p>Com o objetivo de simplificar esta tarefa existe uma variedade de <strong>Frameworks</strong> já desenvolvidas e contendo código para serem asociadas as nossa página de estilos que etivermos a construir. Igualmente poderemos implementar propriedades aos nossos elementos directamente no documento <strong>HTML</strong>, através de classes já existentes utilizando abreviações permitindo mais produtividade e poupança de tempo.</p>
+            <p>A seguir temos uma breve lista das <strong>Frameworks</strong> mais conhecidas e utilizadas.</p>
+
+            <ul>
+                <li><a class="fas fa-code fa-2x" href="http://bouncejs.com/">Bounce.Js</a></li>
+                <li><a class="fas fa-code fa-2x" href="http://vivify.mkcreative.cz/">Vivify</a></li>
+                <li><a class="fas fa-code fa-2x" href="https://www.minimamente.com/project/magic/">Magic Animations</a></li>
+                <li><a class="fas fa-code fa-2x" href="https://zzz.dog/">Zdog</a></li>
+                <li><a class="fas fa-code fa-2x" href="https://animejs.com/">Anime Js</a></li>
+            </ul>
+        </article>
+    </section>
+
+
+    <footer class="jumbotron mb-0">
+        <section class="row m-0 justify-content-center">
+        <article class="col-12 col-lg-8">
+            <h3 class="footext">Projeto Individual Laboratório 2</h3>
+            <h4 class="footext">Novas Tecnologías da Comunicação</h4>
+            <p>A página aqui apresentada está inserida como projeto individual de trabalho para a disciplina de Laboratório 2 que pertence ao segundo semestre do primeiro ano da licenciatura de Novas Tecnologias da Comunicação.</p>
+        </article>
+
+            <article class="col-12 col-lg-4">
+                <h4 class="footext">Edgar Quintero 98940</h4>
+                <img class="img-fluid" src="imgs/unnamed.png">
+                <p>2019/2020 - NTC- UA</p>
+            </article>
+
+            <article>
+                <h4 class="footext">Fontes</h4>
+                <ul>
+                    <li><a href="https://www.w3schools.com/default.asp">W3 Schools</a></li>
+                    <li><a href="https://medium.com/engineerbabu/a-detailed-guide-to-css-animations-and-transitions-b544502c089c">Detailed Guide to CSS Animations and Transitions</a></li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations#Defining_the_animation_sequence_using_keyframes">MDN Web Docs: Using CSS animations</a></li>
+                    <li><a href="https://css-tricks.com/almanac/properties/t/transform/">CSS Tricks - Transform</a></li>
+                    <li><a href="https://thoughtbot.com/blog/css-animation-for-beginners">Thoughbot - CSS Animation for Beginners</a></li>
+                </ul>
+
+            </article>
+
+        </section>
+
+    </footer>
+
+</main>
+
+
+
+
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="js/jquery-3.4.1.slim.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+
+<script>
+    function openNav() {
+        document.getElementById("mySidebar").style.width = "250px";
+        document.getElementById("main").style.marginLeft = "250px";
+    }
+
+    function closeNav() {
+        document.getElementById("mySidebar").style.width = "0";
+        document.getElementById("main").style.marginLeft= "0";
+    }
+</script>
+
+
+</body>
+</html>
